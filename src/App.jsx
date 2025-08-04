@@ -1,6 +1,16 @@
 
+import { useState } from 'react'
 import './App.css'
 function App(){
-  return(<><h1>Hello World</h1></>)
+
+  
+  const[character,setCharacter]=useState('');
+const handleInput=(e)=>{
+  setCharacter(e.target.value);
+}
+  return(<><input type='text'value={character} onChange={handleInput}/>
+  <p>Characters: {character}</p>
+  <p>Length: {character.length}</p>
+  </>)
 }
 export default App
